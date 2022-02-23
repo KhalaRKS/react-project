@@ -1,0 +1,35 @@
+.navbar--container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    .user--info{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      p{
+        font-size: 1.75em;
+        font-weight: 400;
+      }
+      .user--points{
+        display: flex;
+        background-color: #e2e2e2;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 20px;
+        min-width: fit-content;
+        padding: 5px 10px;
+        p{
+          font-size: 1.5em;
+          font-weight: 400;
+          text-align: center;
+          margin: 0;
+        }
+        img{
+          height: fit-content;
+          
+        }
+      }
+    }
+  }

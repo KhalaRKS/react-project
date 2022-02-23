@@ -1,0 +1,22 @@
+.container--filter{
+    width: 90%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    div{
+        display: flex;
+        align-items: center;
+        width: 70%;
+    }
+    .title--sort{
+        font-size: 1.5em;
+        font-weight: 400;
+        color: #868686;
+    }
+    .button--sort--container{
+        display: flex;
+        justify-content: space-around;
+        width: 60%;
+    }   
+}
