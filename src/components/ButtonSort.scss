@@ -10,6 +10,7 @@ $x-large: 1020px;
     background-color: hsl(0, 0%, 89%);
     padding: 2px 2px;
     border-radius: 10px;
+    user-select: none;
 }
 .button--sort.active{
     color: white;

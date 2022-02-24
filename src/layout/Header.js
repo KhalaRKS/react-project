@@ -6,7 +6,7 @@ import "./Header.scss"
 function Header(props){
     return(
         <>
-            <Navbar user={props.user}/>
+            <Navbar user={props.user} assignPoints={props.setPoints}/>
             <div className="banner--header" >
                 <h1 className="tittle--banner">Electronics</h1>
                 <img src={banner} alt="banner-foto"/>

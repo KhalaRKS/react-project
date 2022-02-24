@@ -25,19 +25,22 @@ $x-large: 1020px;
         border-radius: 20px;
         min-width: fit-content;
         padding: 5px 10px;
+        cursor: pointer;
+        user-select: none;
         p{
           font-size: 1.25em;
           font-weight: 400;
           text-align: center;
           margin: 0;
+          user-select: none;
         }
         img{
           height: fit-content;
           
         }
       }
-    }
   }
+}
 
 @media screen and (min-width: 768px) {
   .navbar--container{

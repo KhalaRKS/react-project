@@ -2,15 +2,16 @@ import { useState, useEffect } from "react";
 import './App.scss';
 import Header from './layout/Header'
 import Main from './layout/Main'
-import Footer from './layout/Footer'
 import toast, { Toaster } from 'react-hot-toast';
 
 
 function App() {
-  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjE1YWI2OTQyNjM5YjAwMjEyY2MwOTgiLCJpYXQiOjE2NDU1ODczMDV9.gpQ6fUYPx8V5RgpNEwlx4ln7z5ipNcXMyG-UBVAEa2M';  
+  
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjE1YWI2OTQyNjM5YjAwMjEyY2MwOTgiLCJpYXQiOjE2NDU1ODczMDV9.gpQ6fUYPx8V5RgpNEwlx4ln7z5ipNcXMyG-UBVAEa2M';  
 
     const [user, setUser] = useState({name:'',points:''});
     const [products, setProducts] = useState([]);
+    const [page, setPage] = useState({page: 0,length: 15});
 
     useEffect(() => {
         fetch('https://coding-challenge-api.aerolab.co/user/me', {
@@ -42,20 +43,48 @@ function App() {
         })
     },[])
     
-    function setPoints(cost) {
+    function setPoints(cost,add = false) {
       let refreshUserData = {...user}
-      if(refreshUserData.points - cost < 0) return toast.error('Not enought founds!');
-      refreshUserData.points = refreshUserData.points - cost
+      
+      if(add){
+        refreshUserData.points += cost
+        if(refreshUserData.points > 10000) {
+          refreshUserData.points = 10000
+          setUser(refreshUserData)
+          return toast.success('You reached the maximum points!')
+        }
+        setUser(refreshUserData)
+        return toast.success('Points Added successfully!')
+      }
+
+      if(refreshUserData.points - cost < 0) return toast.error('Not enought founds!')
+      
+      refreshUserData.points -= cost
       setUser(refreshUserData)
-      toast.success('Successfully purchased!')
-    }
+      return toast.success('Successfully purchased!')
+      }
     
+
+    function changePage(){
+
+      let newPage = {...page}
+
+      if(!page.page){
+          newPage.page = (products.length / 2)
+          newPage.length = products.length - 1
+          setPage(newPage)
+          return
+      }
+      newPage.page = 0
+      newPage.length = (products.length / 2) - 1 
+      setPage(newPage)
+  }
+  
   return (
     <div className="App">
-      <Header user={user}/>
-      <Main products={products} setPoints={setPoints}/>
+      <Header user={user} setPoints={setPoints}/>
+      <Main pagination={page} products={products} changePage={changePage} setPoints={setPoints}/>
       <Toaster position="top-right" reverseOrder={false}/>
-      <Footer products={products}/>
     </div>
   );
 }

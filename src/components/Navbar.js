@@ -11,7 +11,7 @@ function Navbar(props) {
                 <img src={logo} alt="aerolab-logo" />
                 <div className="user--info">
                     <p className="user--name">{name}</p>
-                    <div className="user--points">
+                    <div onClick={() => {props.assignPoints(1000,true)}}className="user--points">
                         <p >{points}</p>
                         <img src={coin} alt="coin-logo"/>
                     </div>

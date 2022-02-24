@@ -6,13 +6,11 @@ import "./Main.scss"
 function Main(props){
 
     const [products,setProducts] = useState(props.products)
-    const [page, setPage] = useState({page: 0,length: 15});
-
+    
     useEffect(() => {
         setProducts(props.products)
     },[props.products])
 
-   
     const sortingFor = {
         mostRecent: () => {
             const newProducts = Array.from(products.sort((prev,curr) => prev.date - curr.date));
@@ -42,26 +40,14 @@ function Main(props){
        return productCards;
     }
 
-    function changePage(){
-
-        let newPage = {...page}
-
-        if(!page.page){
-            newPage.page = (products.length / 2)
-            newPage.length = products.length - 1
-            setPage(newPage)
-            return
-        }
-        newPage.page = 0
-        newPage.length = (products.length / 2) - 1 
-        setPage(newPage)
-    }
+   
     return (
         <div className='main--container'>
-            <Filter pagination={page} sortingFor={sortingFor} changePage={changePage}/>
+            <Filter pagination={props.pagination} sortingFor={sortingFor} changePage={props.changePage} buttonSort={true}/>
             <div className='card--container'>
-                {getCards(page,products)}
+                {getCards(props.pagination,products)}
             </div>
+            <Filter pagination={props.pagination} changePage={props.changePage} buttonSort={false}/>
         </div>
     )
 }
