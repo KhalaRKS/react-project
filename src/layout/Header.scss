@@ -1,8 +1,14 @@
+$small: 320px;
+$medium: 480px;
+$large: 768px;
+$x-large: 1020px;
 .banner--header{
     width: 100%;
     position: relative;
     img{
       width: 100%;
+      height: 200px;
+      object-fit: cover;
     }
     h1{
       position: absolute;
@@ -10,5 +16,31 @@
       left: 10%;
       font-size: 3em;
       color: white;
+    }
+  }
+  @media screen and (min-width:$medium) {
+    .banner--header{
+      img{
+        width: 100%;
+        height: 300px;
+      }
+    }
+  }
+  @media screen and (min-width:$large) {
+    .banner--header{
+      img{
+        width: 100%;
+        height: 350px;
+      }
+    }
+  }
+  @media screen and (min-width:$x-large) {
+    .banner--header{
+      img{
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+
+      }
     }
   }

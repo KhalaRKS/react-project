@@ -1,22 +1,52 @@
+$medium: 480px;
+$large: 768px;
 .container--filter{
     width: 90%;
     display: flex;
     margin: auto;
     align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+
     div{
         display: flex;
         align-items: center;
-        width: 70%;
+        flex-direction: column;
+        width: 100%;
+        .separator--filter{
+            width: 1px;
+            height: fit-content;
+            background-color: black;
+        }
     }
     .title--sort{
         font-size: 1.5em;
         font-weight: 400;
         color: #868686;
+        padding: 0px 5px;
     }
     .button--sort--container{
         display: flex;
-        justify-content: space-around;
-        width: 60%;
+        width: 100%;
     }   
+}
+@media  screen and (min-width: $medium) {
+}
+@media  screen and (min-width: $large) {
+    .container--filter{
+        flex-direction: row;
+    
+        div{
+            flex-direction: row;
+            width: 80%;
+        }
+        .title--sort{
+            font-size: 1.3em;
+            border-left: 1px solid #CCC;
+        }
+        .button--sort--container{
+            width: 85%;
+            max-width: 400px;
+            justify-content: space-around;
+        }   
+    }
 }

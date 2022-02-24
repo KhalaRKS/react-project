@@ -4,9 +4,7 @@ import ProductCard from "../components/ProductCard";
 import "./Main.scss"
 
 function Main(props){
-
     const [products,setProducts] = useState(props.products)
-    
     useEffect(() => {
         setProducts(props.products)
     },[props.products])
@@ -28,7 +26,7 @@ function Main(props){
     }
 
     function getProductCards(prod){
-        return prod.map((p) => <ProductCard key={p._id} product={p}/>)
+        return prod.map((p) => <ProductCard assignPoints={props.setPoints} key={p._id} product={p}/>)
     }
  
     return (

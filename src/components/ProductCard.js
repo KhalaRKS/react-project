@@ -8,7 +8,6 @@ import iconCartWhite from "../assets/icons/buy-white.svg"
 
 function ProductCard(props) {
     let {name, category, cost, img} = props.product
-    
     const [iconSrc, setIconSrc] = useState(iconCartBlue)
 
     return (
@@ -19,7 +18,7 @@ function ProductCard(props) {
                 <h2>{cost}</h2>
                 <img src={coin} alt="coin-logo" />
                 </div>
-                <button >Redeem now</button>
+                <button onClick={() => props.assignPoints(cost)} >Redeem now</button>
             </div>
             <img src={img.url} alt={name} />
             <div className="img--separator"></div>

@@ -4,7 +4,7 @@ import "./Header.scss"
 
 
 function Header(props){
-
+    console.log({props})
     return(
         <>
             <Navbar user={props.user}/>

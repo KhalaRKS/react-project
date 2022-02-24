@@ -16,6 +16,7 @@ function Filter(props) {
             <div className="container--filter">
                 <div>
                     <Pagination/>
+                    <div className='separator--filter'></div>
                     <p className='title--sort'>Sort by:</p>
                     <div className="button--sort--container">
                         <ButtonSort onClick={() => {setActiveButton(1)}} className={activeButton !== 1 ? 'button--sort' : 'button--sort active'}
