@@ -5,21 +5,23 @@ $x-large: 1020px;
 
 .button--sort{
     color: #868686;
-    font-size: 1em;
-    font-weight: 600;
+    font-size: 0.85em;
+    font-weight: 400;
     background-color: hsl(0, 0%, 89%);
-    padding: 5px 10px;
+    padding: 2px 2px;
     border-radius: 10px;
-    margin-top: 5px;
 }
 .button--sort.active{
     color: white;
 background-color: rgba(21, 220, 255, 1);
 }
-@media screen and (min-width: $large) {
+@media screen and (min-width: $medium) {
     .button--sort{
         font-size: 1em;
         padding: 5px 10px;
-        border-radius: 10px;
+        font-weight: 600;
     }
+}
+@media screen and (min-width: $large) {
+
 }

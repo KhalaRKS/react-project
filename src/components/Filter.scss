@@ -2,12 +2,13 @@ $medium: 480px;
 $large: 768px;
 .container--filter{
     width: 90%;
+    max-width: 1150px;
     display: flex;
     margin: auto;
     align-items: center;
     flex-direction: column;
 
-    div{
+    .container--titles--filter{
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -26,6 +27,8 @@ $large: 768px;
     }
     .button--sort--container{
         display: flex;
+        align-items: center;
+        justify-content: space-around;
         width: 100%;
     }   
 }
@@ -35,16 +38,19 @@ $large: 768px;
     .container--filter{
         flex-direction: row;
     
-        div{
+        .container--titles--filter{
             flex-direction: row;
-            width: 80%;
+            width: 100%;
         }
         .title--sort{
             font-size: 1.3em;
             border-left: 1px solid #CCC;
+            width: 25%;
+            max-width: 100px;
+            text-align: center;
         }
         .button--sort--container{
-            width: 85%;
+            width: 100%;
             max-width: 400px;
             justify-content: space-around;
         }   

@@ -9,7 +9,6 @@ import iconCartWhite from "../assets/icons/buy-white.svg"
 function ProductCard(props) {
     let {name, category, cost, img} = props.product
     const [iconSrc, setIconSrc] = useState(iconCartBlue)
-
     return (
         <div className="card" onMouseEnter={() => {setIconSrc(iconCartWhite)}} onMouseLeave={() => {setIconSrc(iconCartBlue)}}>
             <img className="icon" src={iconSrc} alt="icon-blue-cart"/>

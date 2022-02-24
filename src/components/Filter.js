@@ -7,15 +7,14 @@ import "./Filter.scss"
 
 function Filter(props) {
     const [activeButton, setActive] = useState(1)
-    
     function setActiveButton(index){
         setActive(index)
     }
 
     return (
             <div className="container--filter">
-                <div>
-                    <Pagination/>
+                <div className='container--titles--filter'>
+                    <Pagination pagination={props.pagination}/>
                     <div className='separator--filter'></div>
                     <p className='title--sort'>Sort by:</p>
                     <div className="button--sort--container">
@@ -25,7 +24,7 @@ function Filter(props) {
                         <ButtonSort onClick={() => {setActiveButton(3)}} className={activeButton !== 3 ? 'button--sort' : 'button--sort active'} sorting={props.sortingFor.highestPrice} title="Highest price"/>
                     </div>
                 </div>
-                <ButtonPagination/>
+                <ButtonPagination pagination={props.pagination} changePage={props.changePage} className='container--button'/>
             </div>
 
 

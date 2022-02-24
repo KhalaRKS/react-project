@@ -1,8 +1,11 @@
+$medium: 480px;
 .card{
     position: relative;
     margin: auto;
     box-shadow: 1px 1px 5px #CCC;
     max-width: 250px;
+    max-height: 249px;
+    transition: .2s ease;
     .hover{
         width: 100%;
         height: 100%;
@@ -50,6 +53,7 @@
 }
 
 .card:hover {
+    transform: translateY(-10px);
     .hover{
         box-sizing: border-box;
         display: flex;

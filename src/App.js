@@ -21,7 +21,6 @@ function App() {
             }})
             .then(response => response.json())
             .then(data => {
-                console.log(data);
                 setUser(data)
             })
 
@@ -42,6 +41,7 @@ function App() {
             setProducts(data);
         })
     },[])
+    
     function setPoints(cost) {
       let refreshUserData = {...user}
       if(refreshUserData.points - cost < 0) return toast.error('Not enought founds!');
@@ -55,7 +55,7 @@ function App() {
       <Header user={user}/>
       <Main products={products} setPoints={setPoints}/>
       <Toaster position="top-right" reverseOrder={false}/>
-      <Footer/>
+      <Footer products={products}/>
     </div>
   );
 }
