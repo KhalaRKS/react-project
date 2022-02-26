@@ -9,6 +9,10 @@ import iconCartWhite from "../assets/icons/buy-white.svg"
 function ProductCard(props) {
     let {name, category, cost, img} = props.product
     const [iconSrc, setIconSrc] = useState(iconCartBlue)
+    let pointsLeft = null
+    if (props.userPoints < cost) {
+        pointsLeft = (cost - props.userPoints)
+    }
     return (
         <div className="card" onMouseEnter={() => {setIconSrc(iconCartWhite)}} onMouseLeave={() => {setIconSrc(iconCartBlue)}}>
             <img className="icon" src={iconSrc} alt="icon-blue-cart"/>
@@ -17,7 +21,7 @@ function ProductCard(props) {
                 <h2>{cost}</h2>
                 <img src={coin} alt="coin-logo" />
                 </div>
-                <button onClick={() => props.assignPoints(cost)} >Redeem now</button>
+                <button className={pointsLeft ? 'insuficient--amount' : ''} onClick={() => props.assignPoints(cost)}>{pointsLeft ? ('You need '+pointsLeft+' points') : 'Reedem now'}</button>
             </div>
             <img src={img.url} alt={name} />
             <div className="img--separator"></div>

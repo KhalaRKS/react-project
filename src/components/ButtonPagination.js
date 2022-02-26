@@ -1,6 +1,7 @@
 import './ButtonPagination.scss'
 import arrowLeft from '../assets/icons/arrow-left.svg'
 import arrowRight from '../assets/icons/arrow-right.svg'
+
 function ButtonPagination(props) {
     return (
             <div className={props.className}>

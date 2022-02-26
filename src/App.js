@@ -83,8 +83,8 @@ function App() {
   return (
     <div className="App">
       <Header user={user} setPoints={setPoints}/>
-      <Main pagination={page} products={products} changePage={changePage} setPoints={setPoints}/>
-      <Toaster position="top-right" reverseOrder={false}/>
+      <Main userPoints={user.points} pagination={page} products={products} changePage={changePage} setPoints={setPoints}/>
+      <Toaster position="top-center" reverseOrder={false}/>
     </div>
   );
 }

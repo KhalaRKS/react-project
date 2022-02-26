@@ -6,7 +6,6 @@ import "./Main.scss"
 function Main(props){
 
     const [products,setProducts] = useState(props.products)
-    
     useEffect(() => {
         setProducts(props.products)
     },[props.products])
@@ -34,7 +33,7 @@ function Main(props){
         let productCards = []
 
         for(let index = pagina.page; index <= pagina.length; index++){
-            productCards.push(<ProductCard assignPoints={props.setPoints} key={products[index]._id} product={products[index]}/>)
+            productCards.push(<ProductCard userPoints={props.userPoints} assignPoints={props.setPoints} key={products[index]._id} product={products[index]}/>)
         }
         
        return productCards;

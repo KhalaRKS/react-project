@@ -11,10 +11,11 @@ $x-large: 1020px;
     padding: 2px 2px;
     border-radius: 10px;
     user-select: none;
+    cursor: pointer;
 }
 .button--sort.active{
     color: white;
-background-color: rgba(21, 220, 255, 1);
+    background-color: rgba(21, 220, 255, 1);
 }
 @media screen and (min-width: $medium) {
     .button--sort{

@@ -72,10 +72,15 @@ $medium: 480px;
             color: rgb(100, 100, 100);
             width: 100%;    
             padding: .5em;
-            background-color: white;
             border-radius: 20px;
             border: none;
             cursor: pointer;       
+        }
+        .insuficient--amount{
+            opacity: 0.9;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            font-weight: 400;
         }
     
         div{
